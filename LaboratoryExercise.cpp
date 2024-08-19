@@ -1,8 +1,10 @@
 #include <iostream>
+#include <direct.h>;
+#include <dos.h>;
 using namespace std;
 
 int main() {
-	int myChoice;
+	int choice;
 	
 	cout << "\t MAIN MENU \n";
 	cout << "------------------------------ \n";
@@ -11,11 +13,12 @@ int main() {
 	cout << "3. To Change the Working Directory \n";
 	cout << "4. Exit\n";
 	cout << "Enter the Number: ";
-	cin >> myChoice;
+	cin >> choice;
 	
-	switch (myChoice) {
+	
+	switch (choice) {
 		case 1: 
-			int myNumber;
+			int myChoice;
 			
 			cout << "\n\t LIST FILE DETAIL \n";
 			cout << "------------------------------ \n";
@@ -23,7 +26,7 @@ int main() {
 			cout << "2. List of Extension Files \n";
 			cout << "3. List of Name Wise \n";	
 			cout << "Enter the Number: ";
-			cin >> myNumber;
+			cin >> myChoice;
 			break;
 		case 2:
 			break;
@@ -33,6 +36,7 @@ int main() {
 			cout << "\nThanks For Using!";
 			return 0;
 		default:
-			cout << "Invalid Input!";					
-	}	
+			cout << "\nInvalid Input!";					
+	}
+	return 0;	
 }
