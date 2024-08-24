@@ -18,23 +18,23 @@ int main() {
         cin >> choice;
         
         switch (choice) {
-        case 1: 
-            listFile();
-            break;
-        case 2:
-            createDirectory();
-            break;
-        case 3:
-            changeDirectory();
-            break;
-        case 4:
-            cout << "\nThanks For Using! \n";
-            return 0;
-        default:
-        	system("cls");
-            cout << "\nInvalid Input! Please try again. \n";
-			cin.clear();
-        	fflush(stdin);                    
+	        case 1: 
+	            listFile();
+	            break;
+	        case 2:
+	            createDirectory();
+	            break;
+	        case 3:
+	            changeDirectory();
+	            break;
+	        case 4:
+	            cout << "\nThanks For Using! \n";
+	            return 0;
+	        default:
+	        	system("cls");
+	            cout << "\nInvalid Input! Please try again. \n";
+				cin.clear();
+	        	fflush(stdin);                    
         }    
     } 
 	return 0;     
