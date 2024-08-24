@@ -4,9 +4,9 @@
 using namespace std;
 
 void displayMenu();
-void list_file();
-void create_directory();
-void change_directory();
+void listFile();
+void createDirectory();
+void changeDirectory();
 
 
 int main() {	
@@ -19,13 +19,13 @@ int main() {
 		
 		switch (choice) {
 		case 1: 
-			list_file();
+			listFile();
 			break;
 		case 2:
-			create_directory();
+			createDirectory();
 			break;
 		case 3:
-			change_directory();
+			changeDirectory();
 			break;
 		case 4:
 			cout << "\nThanks For Using! \n";
@@ -46,7 +46,7 @@ void displayMenu() {
 	cout << "4. Exit\n";
 }
 
-void list_file() {
+void listFile() {
 	int myChoice;
 	cout << "\n\t LIST FILE DETAIL \n";
 	cout << "------------------------------ \n";
@@ -57,14 +57,14 @@ void list_file() {
 	cin >> myChoice;
 }
 
-void create_directory() {
-    string dir_name;
+void createDirectory() {
+    string dirName;
     
     cout << "Enter the directory name: ";
-    cin >> dir_name;
+    cin >>dirName;
 
-    if (_mkdir(dir_name.c_str()) == 0) {
-        cout << endl << dir_name << " Directory Successfully Created. \n \n";
+    if (_mkdir(dirName.c_str()) == 0) {
+        cout << endl << dirName << " Directory Successfully Created. \n \n";
     } 
 	else {
         cout << "Directory already exists or could not be created. \n \n";
@@ -74,19 +74,19 @@ void create_directory() {
     
     char currentPath[FILENAME_MAX];
     if (getcwd(currentPath, sizeof(currentPath)) != NULL) {
-        cout << "Current Directory: " << currentPath << "\\" << dir_name << "\n \n";
+        cout << "Current Directory: " << currentPath << "\\" << dirName << "\n \n";
     } 
     system("pause");
 }
 
 
-void change_directory() {
+void changeDirectory() {
     int option;
-    string dir_name;
+    string dirName;
     
     char currentPath[FILENAME_MAX];
     if (getcwd(currentPath, sizeof(currentPath)) != NULL) {
-        cout << "\nCurrent Directory: " << currentPath << "\\" << dir_name << "\n";
+        cout << "\nCurrent Directory: " << currentPath << "\\" << dirName << "\n";
     } 
 
 	cout << "\tChange Directory \n";
@@ -118,13 +118,13 @@ void change_directory() {
             break;
         case 3:
             cout << "\nEnter the path of the directory: ";
-            cin >> dir_name;
+            cin >> dirName;
             
-            if (chdir(dir_name.c_str()) == 0) {
-                cout << "Changed to directory: " << dir_name << "\n";
+            if (chdir(dirName.c_str()) == 0) {
+                cout << "Changed to directory: " << dirName << "\n";
                 
                 if (getcwd(currentPath, sizeof(currentPath)) != NULL) {
-        			cout << "Current Directory: " << currentPath << "\\" << dir_name << "\n";
+        			cout << "Current Directory: " << currentPath << "\\" << dirName << "\n";
     			}   
                 system("pause");
             } 
