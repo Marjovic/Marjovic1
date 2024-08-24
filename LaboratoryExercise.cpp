@@ -121,7 +121,11 @@ void change_directory() {
             cin >> dir_name;
             
             if (chdir(dir_name.c_str()) == 0) {
-                cout << "\nChanged to directory: " << dir_name << "\n \n";
+                cout << "Changed to directory: " << dir_name << "\n";
+                
+                if (getcwd(currentPath, sizeof(currentPath)) != NULL) {
+        			cout << "Current Directory: " << currentPath << "\\" << dir_name << "\n";
+    			}   
                 system("pause");
             } 
 			else {
